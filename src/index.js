@@ -2,4 +2,4 @@ import timer from './modules/timer'
 
 
 
-timer('07 may 2022')
+timer('12 may 2022')
