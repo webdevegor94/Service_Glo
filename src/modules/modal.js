@@ -5,6 +5,25 @@ const modal = () => {
     const popup = document.querySelector('.popup')
     const content = popup.querySelector('.popup-content')
 
+    const animate = ({ timing, draw, duration }) => {
+        let start = performance.now();
+
+        requestAnimationFrame(function animate(time) {
+            // timeFraction изменяется от 0 до 1
+            let timeFraction = (time - start) / duration;
+            if (timeFraction > 1) timeFraction = 1;
+
+            // вычисление текущего состояния анимации
+            let progress = timing(timeFraction);
+
+            draw(progress); // отрисовать её
+
+            if (timeFraction < 1) {
+                requestAnimationFrame(animate);
+            }
+        });
+    };
+
     function showModal() {
         popup.style.display = 'block'
         if (window.screen.availWidth > 767) {
@@ -22,7 +41,6 @@ const modal = () => {
 
     buttons.forEach(btn => {
         btn.addEventListener('click', () => {
-            showModal()
             modal.style.display = 'block'
         })
     })
