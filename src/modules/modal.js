@@ -5,8 +5,6 @@ const modal = () => {
     const popup = document.querySelector('.popup')
     const content = popup.querySelector('.popup-content')
 
-
-
     function showModal() {
         popup.style.display = 'block'
         if (window.screen.availWidth > 767) {
@@ -24,6 +22,7 @@ const modal = () => {
 
     buttons.forEach(btn => {
         btn.addEventListener('click', () => {
+            showModal()
             modal.style.display = 'block'
         })
     })
@@ -31,10 +30,6 @@ const modal = () => {
     closeBtn.addEventListener('click', () => {
         modal.style.display = 'none'
     })
-
-
-
-
 
 }
 
