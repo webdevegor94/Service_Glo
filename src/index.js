@@ -1,5 +1,10 @@
 import timer from './modules/timer'
+import menu from './modules/menu'
+import modal from './modules/modal'
 
 
 
-timer('12 may 2022')
+
+timer('13 may 2022')
+menu()
+modal()
