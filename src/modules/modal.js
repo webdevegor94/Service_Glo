@@ -42,11 +42,13 @@ const modal = () => {
     buttons.forEach(btn => {
         btn.addEventListener('click', () => {
             modal.style.display = 'block'
+            showModal()
         })
     })
 
     closeBtn.addEventListener('click', () => {
         modal.style.display = 'none'
+
     })
 
 }
