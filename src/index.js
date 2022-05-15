@@ -3,11 +3,14 @@ import menu from './modules/menu'
 import modal from './modules/modal'
 import calculator from './modules/calculator'
 import forms from './modules/forms'
+import tabs from './modules/tabs'
+import slider from './modules/slider'
 
 
 
 
-timer('13 may 2022')
+
+timer('17 may 2022')
 menu()
 modal()
 calculator()
@@ -29,3 +32,5 @@ forms({
     emailSelector: '#form3-email',
     placeholderSelector: null
 })
+tabs()
+slider()
