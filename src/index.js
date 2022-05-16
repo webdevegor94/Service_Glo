@@ -5,6 +5,7 @@ import calculator from './modules/calculator'
 import forms from './modules/forms'
 import tabs from './modules/tabs'
 import slider from './modules/slider'
+import calc from './modules/calc'
 
 
 
@@ -34,3 +35,4 @@ forms({
 })
 tabs()
 slider()
+calc(100)
