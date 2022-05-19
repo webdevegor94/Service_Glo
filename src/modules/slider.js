@@ -65,7 +65,7 @@ const slider = () => {
 
         prevSlide(slides, currentSlide, 'portfolio-item-active')
         prevSlide(dots, currentSlide, 'dot-active')
-        console.log(e.target.classList)
+
         if (e.target.classList.contains('next')) {
 
             currentSlide++
