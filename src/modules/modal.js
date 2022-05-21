@@ -23,8 +23,7 @@ const modal = () => {
     }
 
     buttons.forEach(btn => {
-        btn.addEventListener('click', () => {
-
+        btn.addEventListener('click', (e) => {
             modal.style.display = 'block'
             showModal()
 
