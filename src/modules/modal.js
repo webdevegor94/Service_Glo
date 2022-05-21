@@ -13,7 +13,6 @@ const modal = () => {
             animate({
                 duration: 500,
                 timing(timeFraction) {
-                    // return Math.pow(timeFraction, 2)
                     return 1 - Math.sin(Math.acos(timeFraction));
                 },
                 draw(progress) {
@@ -25,14 +24,17 @@ const modal = () => {
 
     buttons.forEach(btn => {
         btn.addEventListener('click', () => {
+
             modal.style.display = 'block'
             showModal()
+
         })
     })
 
     modal.addEventListener('click', (e) => {
         if (!e.target.closest('.popup-content') || e.target.classList.contains('popup-close')) {
             modal.style.display = 'none'
+
         }
     })
 

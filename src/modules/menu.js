@@ -9,6 +9,7 @@ const menu = () => {
         menu.classList.toggle('active-menu')
     }
 
+
     menuBtn.addEventListener('click', handleMenu)
 
     menu.addEventListener('click', (e) => {
@@ -17,6 +18,7 @@ const menu = () => {
         }
         menuItems.forEach(menuItem => menuItem.classList.toggle('ul>li>a'))
     })
+
 }
 
 export default menu
