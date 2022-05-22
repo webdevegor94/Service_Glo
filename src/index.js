@@ -11,7 +11,7 @@ import calc from './modules/calc'
 
 
 
-timer('20  may 2022')
+timer('27  may 2022')
 menu()
 modal()
 calculator()
