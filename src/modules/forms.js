@@ -24,6 +24,7 @@ const forms = ({
         const placeholderInput = document.querySelector(placeholderSelector)
         placeholderInput.addEventListener('input', validText)
     }
+
 }
 
 export default forms
