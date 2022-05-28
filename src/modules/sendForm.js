@@ -1,6 +1,8 @@
 const sendForm = ({ formId, someElem = [] }) => {
     const form = document.getElementById(formId)
     const statusBlock = document.createElement('div')
+    const popupBlock = document.querySelector('.popup')
+    statusBlock.style.color = 'white'
     const loadText = 'Загрузка...'
     const errorText = 'Ошибка...'
     const successText = 'Спасибо! Наш менеджер с Вами свяжется'
@@ -11,9 +13,26 @@ const sendForm = ({ formId, someElem = [] }) => {
     }
 
     const sendData = (data) => {
+        const payload = {}
+        if (data.user_email !== '') {
+            payload['user_email'] = data.user_email
+        }
+        if (data.user_phone !== '') {
+            payload['user_phone'] = data.user_phone
+        }
+        if (data.user_name !== '') {
+            payload['user_name'] = data.user_name
+        }
+        if (data.total !== '0') {
+            payload['total'] = data.total
+        }
+        if (data.user_message !== '') {
+            payload['user_message'] = data.user_message
+        }
+
         return fetch('https://jsonplaceholder.typicode.com/posts', {
             method: 'POST',
-            body: JSON.stringify(data),
+            body: JSON.stringify(payload),
             headers: {
                 'Content-Type': 'application/json'
             }
@@ -47,10 +66,12 @@ const sendForm = ({ formId, someElem = [] }) => {
             sendData(formBody)
                 .then(data => {
                     statusBlock.textContent = successText
-
                     formElements.forEach(input => {
                         input.value = ''
                     })
+                    setTimeout(() => {
+                        popupBlock.style.display = 'none'
+                    }, 3000)
                 })
                 .catch(error => {
                     statusBlock.textContent = errorText
@@ -67,11 +88,10 @@ const sendForm = ({ formId, someElem = [] }) => {
 
         form.addEventListener('submit', (event) => {
             event.preventDefault()
-
             submitForm()
         })
-    } catch (eeror) {
-        console.log(eeror.message)
+    } catch (error) {
+        console.log(error.message)
     }
 }
 
