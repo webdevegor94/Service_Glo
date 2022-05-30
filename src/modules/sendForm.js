@@ -70,6 +70,7 @@ const sendForm = ({ formId, someElem = [] }) => {
                         input.value = ''
                     })
                     setTimeout(() => {
+                        statusBlock.style.display = 'none'
                         popupBlock.style.display = 'none'
                     }, 3000)
                 })

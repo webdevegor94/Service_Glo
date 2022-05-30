@@ -10,7 +10,7 @@ import sendForm from './modules/sendForm'
 
 
 
-timer('30  may 2022')
+timer('02  June 2022')
 menu()
 modal()
 calculator()

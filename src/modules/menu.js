@@ -43,6 +43,26 @@ const menu = () => {
         });
     };
     move();
+
+    // const scroll = () => {
+    //     const topMenu = document.querySelector()
+    //     topMenu.addEventListener("click", (event) => {
+    //         const target = event.target;
+    //         if (target.matches("a")) {
+    //             event.preventDefault();
+    //             const thisEl = document.querySelector(target.getAttribute("href"));
+    //             console.log(target.getAttribute("href"));
+    //             console.log(thisEl);
+    //             thisEl.scrollIntoView({
+    //                 behavior: "smooth",
+    //                 block: "start",
+    //             });
+    //         }
+    //     });
+    // };
+    // scroll();
+
+
 }
 
 export default menu
